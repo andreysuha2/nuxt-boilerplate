@@ -1,5 +1,6 @@
 const webpack = require("webpack"),
-    path = require("path")
+    path = require("path");
+require("./env.config");
 
 module.exports = {
     vue: { config: { productionTip: false } },
