@@ -1,4 +1,7 @@
-export default {
+const webpack = require("webpack"),
+    path = require("path")
+
+module.exports = {
     vue: { config: { productionTip: false } },
 
     // Global page headers: https://go.nuxtjs.dev/config-head
@@ -55,6 +58,24 @@ export default {
                     exclude: /(node_modules)/
                 });
             }
+
+            config.plugins.push(
+                new webpack.DefinePlugin({ isDev }),
+                new webpack.ProvidePlugin({ "dl": [ path.resolve(__dirname, "./assets/js/DevLogger.js"), "default" ] })
+            );
+            if(isClient) {
+                config.devtool = isDev ? "source-map": "none";
+            }
+
+            const aliases = {
+                "@assets": path.resolve(__dirname, "./assets"),
+                "@lib": path.resolve(__dirname, "./assets/js"),
+                "@scss": path.resolve(__dirname, "./assets/scss"),
+                "@components": path.resolve(__dirname, "./components"),
+                "@helpers": path.resolve(__dirname, "./assets/js/helpers"),
+            };
+
+            Object.assign(config.resolve.alias, aliases);
         }
     }
 };
