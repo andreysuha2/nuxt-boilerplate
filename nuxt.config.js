@@ -1,15 +1,10 @@
 export default {
-    vue: {
-        config: {
-            productionTip: false
-        }
-    },
+    vue: { config: { productionTip: false } },
+
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'nuxt-boilerplate',
-        htmlAttrs: {
-        lang: 'en'
-    },
+        htmlAttrs: { lang: 'en' },
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -33,6 +28,8 @@ export default {
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
+        '@nuxtjs/stylelint-module',
+        '@nuxtjs/style-resources'
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -41,5 +38,15 @@ export default {
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
+        extend(config, { isDev, isClient }) {
+            if(isDev && isClient) {
+                config.module.rules.push({
+                    enforce: 'pre',
+                    test: /\.(js|vue)$/,
+                    loader: 'eslint-loader',
+                    exclude: /(node_modules)/
+                });
+            }
+        }
     }
-}
+};

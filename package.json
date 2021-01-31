@@ -6,11 +6,30 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "fix": "npm run js-fix && npm run scss-fix",
+    "js-fix": "eslint --fix **/*.{js,vue} --ignore-path .gitignore .",
+    "scss-fix": "stylelint --fix **/*.{vue,css,scss,sass}",
+    "lint": "npm run js-lint && npm run scss-lint",
+    "js-lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "scss-lint": "stylelint **/*.{vue,css,scss,sass}",
+    "precommit": "npm run lint"
   },
   "dependencies": {
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/stylelint-module": "^4.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.19.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-vue": "^7.5.0",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1",
+    "stylelint": "^13.9.0",
+    "stylelint-selector-bem-pattern": "^2.1.0"
+  }
 }
