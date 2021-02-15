@@ -26,13 +26,14 @@ module.exports = {
 
     styleResources: {
         scss: [
-            'assets/scss/_variables.scss',
+            'assets/scss/variables/main.scss',
             'assets/scss/_mixins.scss'
         ]
     },
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
+        '~/plugins/IconFont'
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -60,6 +61,18 @@ module.exports = {
                 });
             }
 
+            config.module.rules.push({
+                test: /plugins\/IconFont\/index\.js$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader',
+                    {
+                        loader: 'webfonts-loader',
+                        options: { publicPath: config.output.publicPath }
+                    }
+                ]
+            });
+
             config.plugins.push(
                 new webpack.DefinePlugin({ isDev }),
                 new webpack.ProvidePlugin({ "dl": [ path.resolve(__dirname, "./assets/js/DevLogger.js"), "default" ] })
@@ -72,8 +85,9 @@ module.exports = {
                 "@assets": path.resolve(__dirname, "./assets"),
                 "@lib": path.resolve(__dirname, "./assets/js"),
                 "@scss": path.resolve(__dirname, "./assets/scss"),
+                "@fonts": path.resolve(__dirname, "./assets/fonts"),
                 "@components": path.resolve(__dirname, "./components"),
-                "@helpers": path.resolve(__dirname, "./assets/js/helpers"),
+                "@helpers": path.resolve(__dirname, "./assets/js/helpers")
             };
 
             Object.assign(config.resolve.alias, aliases);
