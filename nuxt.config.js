@@ -87,6 +87,7 @@ module.exports = {
                 "@scss": path.resolve(__dirname, "./assets/scss"),
                 "@fonts": path.resolve(__dirname, "./assets/fonts"),
                 "@components": path.resolve(__dirname, "./components"),
+                "@globalComponents": path.resolve(__dirname, "./components/Global"),
                 "@ui": path.resolve(__dirname, "./components/UI"),
                 "@helpers": path.resolve(__dirname, "./assets/js/helpers")
             };
