@@ -1,7 +1,7 @@
 module.exports = {
     files: [ '../../assets/images/icons/*.svg' ],
     fontName: 'IconFont',
-    classPrefix: 'icon-',
-    baseSelector: '.icon',
+    classPrefix: 'app-icon__',
+    baseSelector: '.app-icon',
     types: [ 'eot', 'woff', 'woff2', 'ttf', 'svg' ]
 };

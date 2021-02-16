@@ -1,5 +1,6 @@
 *, :after, :before {
     box-sizing: border-box;
+    outline: none;
 }
 
 html, body, #__nuxt, #__layout {
@@ -9,9 +10,4 @@ html, body, #__nuxt, #__layout {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $titleFont;
-}
-
-.icon {
-    font-family: $iconFont;
-    font-style: normal;
 }
