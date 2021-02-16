@@ -1,5 +1,7 @@
 import Vue from "vue";
 
+import "./grid";
+
 import AppIcon from "@ui/AppIcon";
 import AppButton from "@ui/AppButton";
 
