@@ -1,5 +1,5 @@
 <template>
-    <div class="app-grid">
+    <div class="app-cell">
         <slot></slot>
     </div>
 </template>

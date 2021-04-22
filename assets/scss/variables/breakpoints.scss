@@ -14,3 +14,22 @@ $wWidthSVGA: 800px;
 $wWidthSM: 768px;
 $wWidthNHD: 640px;
 $wWidthSmall: 480px;
+
+$resolutions: (
+    'FullHD': $wWidthFullHD,
+    'WXGAPlus': $wWidthWXGAPlus,
+    'WSXGA': $wWidthWSXGA,
+    'XJXGA': $wWidthXJXGA,
+    'HDV': $wWidthHDV,
+    'SXGAPlus': $wWidthSXGAPlus,
+    'HDReady': $wWidthHDReady,
+    'WXVGA': $wWidthWXVGA,
+    'XGAPlus': $wWidthXGAPlus,
+    'XGA': $wWidthXGA,
+    'QHD': $wWidthQHD,
+    'FWVGA': $wWidthFWVGA,
+    'SVGA': $wWidthSVGA,
+    'SM': $wWidthSM,
+    'NHD': $wWidthNHD,
+    'Small': $wWidthSmall
+);

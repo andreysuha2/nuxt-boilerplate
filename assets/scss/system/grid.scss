@@ -1,21 +1,87 @@
-$resolutions: (
-    'FullHD': $wWidthFullHD,
-    'WXGAPlus': $wWidthWXGAPlus,
-    'WSXGA': $wWidthWSXGA,
-    'XJXGA': $wWidthXJXGA,
-    'HDV': $wWidthHDV,
-    'SXGAPlus': $wWidthSXGAPlus,
-    'HDReady': $wWidthHDReady,
-    'WXVGA': $wWidthWXVGA,
-    'XGAPlus': $wWidthXGAPlus,
-    'XGA': $wWidthXGA,
-    'QHD': $wWidthQHD,
-    'FWVGA': $wWidthFWVGA,
-    'SVGA': $wWidthSVGA,
-    'SM': $wWidthSM,
-    'NHD': $wWidthNHD,
-    'Small': $wWidthSmall
-);
+.flex {
+    display: flex;
+
+    &-row {
+        flex-direction: row;
+
+        &-reverse {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &-col {
+        flex-direction: column;
+
+        &-reverse {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &-wrap {
+        flex-wrap: wrap;
+
+        &-wrap-reverse {
+            flex-wrap: wrap-reverse;
+        }
+    }
+
+    &-no-wrap {
+        flex-wrap: nowrap;
+    }
+
+    &-center {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.justify {
+    &-start {
+        justify-content: flex-start;
+    }
+
+    &-center {
+        justify-content: center;
+    }
+
+    &-end {
+        justify-content: flex-end;
+    }
+
+    &-between {
+        justify-content: space-between;
+    }
+
+    &-around {
+        justify-content: space-around;
+    }
+
+    &-evenly {
+        justify-content: space-evenly;
+    }
+
+    &-stretch {
+        justify-content: stretch;
+    }
+}
+
+.items {
+    &-start {
+        align-items: flex-start;
+    }
+
+    &-center {
+        align-items: center;
+    }
+
+    &-end {
+        align-items: flex-end;
+    }
+
+    &-stretch {
+        align-items: stretch;
+    }
+}
 
 @each $name, $width in $resolutions {
     @include min-w($width) {
@@ -103,90 +169,5 @@ $resolutions: (
                 align-items: stretch;
             }
         }
-    }
-}
-
-.flex {
-    display: flex;
-
-    &-row {
-        flex-direction: row;
-
-        &-reverse {
-            flex-direction: row-reverse;
-        }
-    }
-
-    &-col {
-        flex-direction: column;
-
-        &-reverse {
-            flex-direction: column-reverse;
-        }
-    }
-
-    &-wrap {
-        flex-wrap: wrap;
-
-        &-wrap-reverse {
-            flex-wrap: wrap-reverse;
-        }
-    }
-
-    &-no-wrap {
-        flex-wrap: nowrap;
-    }
-
-    &-center {
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-.justify {
-    &-start {
-        justify-content: flex-start;
-    }
-
-    &-center {
-        justify-content: center;
-    }
-
-    &-end {
-        justify-content: flex-end;
-    }
-
-    &-between {
-        justify-content: space-between;
-    }
-
-    &-around {
-        justify-content: space-around;
-    }
-
-    &-evenly {
-        justify-content: space-evenly;
-    }
-
-    &-stretch {
-        justify-content: stretch;
-    }
-}
-
-.items {
-    &-start {
-        align-items: flex-start;
-    }
-
-    &-center {
-        align-items: center;
-    }
-
-    &-end {
-        align-items: flex-end;
-    }
-
-    &-stretch {
-        align-items: stretch;
     }
 }

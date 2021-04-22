@@ -1,7 +1,5 @@
 <template>
     <div>
-        <app-grid class="justify-XGA-center">
-            <app-row></app-row>
-        </app-grid>
+      <app-row class="justify-FullHD-center"></app-row>
     </div>
 </template>

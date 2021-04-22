@@ -1,0 +1,35 @@
+$offsets: (5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+
+@each $name, $width in $resolutions {
+    @include min-w($width) {
+        @each $offset in $offsets {
+            .m-#{$name}-#{$offset} {
+                margin: #{$offset}px;
+            }
+
+            .mt-#{$name}-#{$offset} {
+                margin-top: #{$offset}px;
+            }
+
+            .ml-#{$name}-#{$offset} {
+                margin-left: #{$offset}px;
+            }
+
+            .mr-#{$name}-#{$offset} {
+                margin-right: #{$offset}px;
+            }
+
+            .mb-#{$name}-#{$offset} {
+                margin-bottom: #{$offset}px;
+            }
+
+            .mtb-#{$name}-#{$offset} {
+                margin: #{$offset}px 0;
+            }
+
+            .mrl-#{$name}-#{$offset} {
+                margin: 0 #{$offset}px;
+            }
+        }
+    }
+}
